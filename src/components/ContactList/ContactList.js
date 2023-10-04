@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Item, List, Button } from "./ContactList.styled";
-
-import { getError, getIsLoading, selectVisibleContacts } from "redux/selectors";
+import { selectError, selectIsLoading, selectVisibleContacts } from "redux/selectors";
 import { deleteContact, fetchContacts } from "redux/operations";
 import { useEffect } from "react";
 
 export const ContactList = () => {
-    const isLoading = useSelector(getIsLoading);
-    const error = useSelector(getError);
+    const isLoading = useSelector(selectIsLoading);
+    const error = useSelector(selectError);
     const dispatch = useDispatch();
 
     useEffect(() => {
